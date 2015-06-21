@@ -22,7 +22,7 @@
 
 
 
-  <meta name="keywords" content="Algorithms,Data Structure,LeetCode,Stack," />
+  <meta name="keywords" content="Algorithms,Binary Tree,DFS,LeetCode,Preorder Traversal,Searching,Tree," />
 
 
 
@@ -55,7 +55,7 @@
 
 
 
-  <title> Min Stack // Someone Said </title>
+  <title> Flatten Binary Tree to Linked List // Someone Said </title>
 </head>
 
 <body>
@@ -176,7 +176,7 @@
           
           
             
-              Min Stack
+              Flatten Binary Tree to Linked List
             
           
         </h1>
@@ -184,7 +184,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2015-06-20
+          发表于 2015-06-21
         </span>
 
         
@@ -204,8 +204,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/06/20/min-stack/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/min-stack/"></span>
+            <a href="/2015/06/21/flatten-binary-tree-to-linked-list/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/21/flatten-binary-tree-to-linked-list/"></span>
             </a>
           </span>
           
@@ -219,8 +219,8 @@
       
 
       
-        <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/min-stack" target="_blank" rel="external">Min Stack</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MinStack</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">    <span class="keyword">private</span> Stack&lt;Integer&gt; minStack = <span class="keyword">new</span> Stack&lt;Integer&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        stack.push(x);</span><br><span class="line">        <span class="keyword">if</span> (minStack.empty()) &#123;</span><br><span class="line">            minStack.push(x);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (minStack.peek() &gt;= x) &#123;</span><br><span class="line">            minStack.push(x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (minStack.peek().equals(stack.peek())) &#123;</span><br><span class="line">            minStack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        stack.pop();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> stack.peek();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getMin</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> minStack.peek();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/flatten-binary-tree-to-linked-list" target="_blank" rel="external">Flatten Binary Tree to Linked List</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">flatten</span><span class="params">(TreeNode root)</span> </span>&#123;  </span><br><span class="line">        TreeNode[] pre = &#123;<span class="keyword">null</span>&#125;;</span><br><span class="line">        helper(root, pre);  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">helper</span><span class="params">(TreeNode root, TreeNode[] pre)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span>) &#123;  </span><br><span class="line">            <span class="keyword">return</span>; </span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode right = root.right; </span><br><span class="line">        <span class="keyword">if</span>(pre[<span class="number">0</span>] != <span class="keyword">null</span>)  </span><br><span class="line">        &#123;  </span><br><span class="line">            pre[<span class="number">0</span>].left = <span class="keyword">null</span>;  </span><br><span class="line">            pre[<span class="number">0</span>].right = root;  </span><br><span class="line">        &#125;  </span><br><span class="line">        pre[<span class="number">0</span>] = root;  </span><br><span class="line">        helper(root.left, pre);  </span><br><span class="line">        helper(right, pre);  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -230,11 +230,17 @@
           
             <a href="/tags/Algorithms/"> #Algorithms </a>
           
-            <a href="/tags/Data-Structure/"> #Data Structure </a>
+            <a href="/tags/Binary-Tree/"> #Binary Tree </a>
+          
+            <a href="/tags/DFS/"> #DFS </a>
           
             <a href="/tags/LeetCode/"> #LeetCode </a>
           
-            <a href="/tags/Stack/"> #Stack </a>
+            <a href="/tags/Preorder-Traversal/"> #Preorder Traversal </a>
+          
+            <a href="/tags/Searching/"> #Searching </a>
+          
+            <a href="/tags/Tree/"> #Tree </a>
           
         </div>
       
@@ -243,13 +249,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/06/20/minimum-path-sum/">Minimum Path Sum</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/06/20/merge-two-sorted-lists/">Merge Two Sorted Lists</a>
+              <a href="/2015/06/21/binary-tree-postorder-traversal/">Binary Tree Postorder Traversal</a>
             
           </div>
         </div>
@@ -623,9 +627,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'dhytxz';
-      var disqus_identifier = '2015/06/20/min-stack/';
-      var disqus_title = 'Min Stack';
-      var disqus_url = 'http://yoursite.com/2015/06/20/min-stack/';
+      var disqus_identifier = '2015/06/21/flatten-binary-tree-to-linked-list/';
+      var disqus_title = 'Flatten Binary Tree to Linked List';
+      var disqus_url = 'http://yoursite.com/2015/06/21/flatten-binary-tree-to-linked-list/';
 
       (function(){
         var dsq = document.createElement('script');
