@@ -178,6 +178,83 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/20/sqrtx/">
+                Sqrt(x)
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/sqrtx/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/sqrtx/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/sqrtx" target="_blank" rel="external">Sqrt(x)</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">long</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">long</span> end = x;</span><br><span class="line">        <span class="keyword">long</span> mid;</span><br><span class="line">        <span class="keyword">while</span> (start + <span class="number">1</span>&lt; end) &#123;</span><br><span class="line">            mid = start + (end - start) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">long</span> product = mid * mid;</span><br><span class="line">            <span class="keyword">if</span> (product == x) &#123;</span><br><span class="line">                <span class="keyword">return</span> (<span class="keyword">int</span>)mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (product &lt; x) &#123;</span><br><span class="line">                start = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                end = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (start * start == x) &#123;</span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)start;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (end * end == x) &#123;</span><br><span class="line">            <span class="keyword">return</span> (<span class="keyword">int</span>)end;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="keyword">int</span>)start;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/20/sort-list/">
                 Sort List
               </a>
@@ -860,83 +937,6 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/reverse-words-in-a-string/">
-                Reverse Words in a String
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/reverse-words-in-a-string/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/reverse-words-in-a-string/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/reverse-words-in-a-string" target="_blank" rel="external">Reverse Words in a String</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">/*</span><br><span class="line">    public String reverseWords(String s) &#123;</span><br><span class="line">        if (s == null) &#123;</span><br><span class="line">            return "";</span><br><span class="line">        &#125;</span><br><span class="line">        s = s.trim();</span><br><span class="line">        if (s.length() == 0) &#123;</span><br><span class="line">            return "";       </span><br><span class="line">        &#125;</span><br><span class="line">        char[] array = s.toCharArray();</span><br><span class="line">        int start = 0;</span><br><span class="line">        int end = 0;</span><br><span class="line">        while (end &lt; s.length()) &#123;</span><br><span class="line">            if (s.charAt(end) != ' ') &#123;</span><br><span class="line">                end++;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                reverseArray(start, end - 1, array);</span><br><span class="line">                while (s.charAt(end) == ' ') &#123;</span><br><span class="line">                    end++;</span><br><span class="line">                &#125;</span><br><span class="line">                start = end;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        reverseArray(start, end - 1, array);</span><br><span class="line">        if (start != 0) &#123;</span><br><span class="line">            reverseArray(0, s.length() - 1, array);    </span><br><span class="line">        &#125;</span><br><span class="line">        String ret = new String(array);</span><br><span class="line">        return ret;</span><br><span class="line">    &#125;</span><br><span class="line">    public void reverseArray(int start, int end, char[] array) &#123;</span><br><span class="line">        while (start &lt; end) &#123;</span><br><span class="line">            char temp = array[start];</span><br><span class="line">            array[start] = array[end];</span><br><span class="line">            array[end] = temp;</span><br><span class="line">            start++;</span><br><span class="line">            end--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">reverseWords</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">""</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        s = s.trim();</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        Stack&lt;String&gt; stack = <span class="keyword">new</span> Stack&lt;String&gt;();</span><br><span class="line">        <span class="keyword">while</span> (end &lt; s.length()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(end) != <span class="string">' '</span>) &#123;</span><br><span class="line">                end++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                stack.push(s.substring(start, end));</span><br><span class="line">                <span class="keyword">while</span> (s.charAt(end) == <span class="string">' '</span>) &#123;</span><br><span class="line">                    end++;</span><br><span class="line">                &#125;</span><br><span class="line">                start = end;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(s.substring(start, end));</span><br><span class="line">        String ret = <span class="string">""</span>;</span><br><span class="line">        <span class="keyword">while</span> (!stack.empty()) &#123;</span><br><span class="line">            ret += stack.pop();</span><br><span class="line">            ret += <span class="string">" "</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ret = ret.trim();</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
@@ -975,7 +975,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">127</span>
+              <span class="site-state-item-count">128</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
