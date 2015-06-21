@@ -166,6 +166,83 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/20/minimum-size-subarray-sum/">
+                Minimum Size Subarray Sum
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/minimum-size-subarray-sum/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/minimum-size-subarray-sum/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/minimum-size-subarray-sum" target="_blank" rel="external">Minimum Size Subarray Sum</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minSubArrayLen</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> right = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> length = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">while</span> (right &lt; nums.length) &#123;</span><br><span class="line">            <span class="keyword">while</span> (right &lt; nums.length &amp;&amp; sum &lt; s) &#123;</span><br><span class="line">                sum += nums[right++];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (left &lt; right &amp;&amp; sum &gt;= s) &#123;</span><br><span class="line">                <span class="keyword">if</span> (sum &gt;= s) &#123;</span><br><span class="line">                    length = Math.min(length, right - left);</span><br><span class="line">                &#125;</span><br><span class="line">                sum -= nums[left++];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (length == Integer.MAX_VALUE)?<span class="number">0</span>:length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*</span><br><span class="line">    public int minSubArrayLen(int s, int[] nums) &#123;</span><br><span class="line">        if (nums == null || nums.length == 0) &#123;</span><br><span class="line">            return 0;</span><br><span class="line">        &#125;</span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        int start = 0;</span><br><span class="line">        int end = 0;</span><br><span class="line">        int sum = nums[end];</span><br><span class="line">        int length = Integer.MAX_VALUE;</span><br><span class="line">        while (end &lt; nums.length) &#123;</span><br><span class="line">            if (sum == s) &#123;</span><br><span class="line">                if (length &gt; (end - start + 1)) &#123;</span><br><span class="line">                    length = end - start + 1;</span><br><span class="line">                &#125;</span><br><span class="line">                end++;</span><br><span class="line">                if (end &lt; nums.length) &#123;</span><br><span class="line">                    sum += nums[end];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else if (sum &lt; s) &#123;</span><br><span class="line">                end++;</span><br><span class="line">                if (end &lt; nums.length) &#123;</span><br><span class="line">                    sum += nums[end];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; else &#123; //sum &gt; s</span><br><span class="line">                sum -= nums[start];</span><br><span class="line">                start++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return (length == Integer.MAX_VALUE)?0:length;</span><br><span class="line">    &#125;</span><br><span class="line">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/20/minimum-path-sum/">
                 Minimum Path Sum
               </a>
@@ -848,83 +925,6 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/longest-substring-without-repeating-characters/">
-                Longest Substring Without Repeating Characters
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/longest-substring-without-repeating-characters/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/longest-substring-without-repeating-characters/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters" target="_blank" rel="external">Longest Substring Without Repeating Characters</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (s == <span class="keyword">null</span> || s.length() == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> max = Integer.MIN_VALUE;</span><br><span class="line">        HashMap&lt;Character, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;Character, Integer&gt;();</span><br><span class="line">        <span class="keyword">while</span> (end &lt; s.length()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(s.charAt(end))) &#123;</span><br><span class="line">                map.put(s.charAt(end), end);</span><br><span class="line">                end++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                max = Math.max(max, end - start);</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = start; i &lt; map.get(s.charAt(end)); i++) &#123;</span><br><span class="line">                    map.remove(s.charAt(i));</span><br><span class="line">                &#125;</span><br><span class="line">                start = map.get(s.charAt(end)) + <span class="number">1</span>;</span><br><span class="line">                map.put(s.charAt(end), end);</span><br><span class="line">                end++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(max, end - start);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
@@ -963,7 +963,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">122</span>
+              <span class="site-state-item-count">123</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
