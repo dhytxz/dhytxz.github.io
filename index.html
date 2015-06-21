@@ -178,6 +178,244 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/21/binary-tree-postorder-traversal/">
+                Binary Tree Postorder Traversal
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-21
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/21/binary-tree-postorder-traversal/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/21/binary-tree-postorder-traversal/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/binary-tree-postorder-traversal" target="_blank" rel="external">Binary Tree Postorder Traversal</a></cite></footer></blockquote>
+<h2 id="Version_1">Version 1</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ArrayList&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    ArrayList&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">    Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;TreeNode&gt;();</span><br><span class="line">    TreeNode prev = <span class="keyword">null</span>; <span class="comment">// previously traversed node</span></span><br><span class="line">    TreeNode curr = root;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.empty()) &#123;</span><br><span class="line">        curr = stack.peek();</span><br><span class="line">        <span class="keyword">if</span> (prev == <span class="keyword">null</span> || prev.left == curr || prev.right == curr) &#123; <span class="comment">// traverse down the tree</span></span><br><span class="line">            <span class="keyword">if</span> (curr.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(curr.left);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (curr.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(curr.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (curr.left == prev) &#123; <span class="comment">// traverse up the tree from the left</span></span><br><span class="line">            <span class="keyword">if</span> (curr.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">                stack.push(curr.right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123; <span class="comment">// traverse up the tree from the right</span></span><br><span class="line">            result.add(curr.val);</span><br><span class="line">            stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        prev = curr;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Version_2">Version 2</h2><p>Reverse a strange “preorder”.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; ret = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        preorderTraversal(root, ret);</span><br><span class="line">        Collections.reverse(ret);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">preorderTraversal</span><span class="params">(TreeNode root, List&lt;Integer&gt; ret)</span> </span>&#123;</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;TreeNode&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">            TreeNode curr = stack.pop();</span><br><span class="line">            <span class="keyword">if</span> (curr == <span class="keyword">null</span>) &#123;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            ret.add(curr.val);</span><br><span class="line">            stack.push(curr.left);</span><br><span class="line">            stack.push(curr.right);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/21/house-robber-ii/">
+                House Robber II
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-21
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/21/house-robber-ii/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/21/house-robber-ii/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/house-robber-ii" target="_blank" rel="external">House Robber II</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums.length == <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> Math.max(nums[<span class="number">0</span>], nums[<span class="number">1</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> Math.max(robsub(nums, <span class="number">0</span>, nums.length - <span class="number">2</span>), robsub(nums, <span class="number">1</span>, nums.length - <span class="number">1</span>));  </span><br><span class="line">    &#125;  </span><br><span class="line">      </span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">robsub</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> s, <span class="keyword">int</span> e)</span> </span>&#123;  </span><br><span class="line">        <span class="keyword">int</span> n = e - s + <span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">int</span>[] d = <span class="keyword">new</span> <span class="keyword">int</span>[n];  </span><br><span class="line">        d[<span class="number">0</span>] = nums[s];  </span><br><span class="line">        d[<span class="number">1</span>] = Math.max(nums[s], nums[s + <span class="number">1</span>]);  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;n; i++) &#123;  </span><br><span class="line">            d[i] = Math.max(d[i - <span class="number">2</span>] + nums[s + i], d[i - <span class="number">1</span>]);  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> d[n - <span class="number">1</span>];  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/21/gas-station/">
+                Gas Station
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-21
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/21/gas-station/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/21/gas-station/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/gas-station" target="_blank" rel="external">Gas Station</a></cite></footer></blockquote>
+<p>Version 1</p>
+<p>O(N)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="keyword">int</span>[] gas, <span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(gas == <span class="keyword">null</span> || cost == <span class="keyword">null</span> || gas.length == <span class="number">0</span> || cost.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">int</span> total = <span class="number">0</span>;  </span><br><span class="line">        <span class="keyword">int</span> pointer = -<span class="number">1</span>;  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; gas.length; i++) &#123;  </span><br><span class="line">            <span class="keyword">int</span> diff = gas[i] - cost[i];  </span><br><span class="line">            sum += diff;  </span><br><span class="line">            total += diff;  </span><br><span class="line">            <span class="keyword">if</span>(sum &lt; <span class="number">0</span>) &#123;  </span><br><span class="line">                sum = <span class="number">0</span>;  </span><br><span class="line">                pointer = i;  </span><br><span class="line">            &#125;  </span><br><span class="line">        &#125;  </span><br><span class="line">        <span class="keyword">return</span> total &gt;= <span class="number">0</span>?pointer + <span class="number">1</span>:-<span class="number">1</span>;         </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Version 2</p>
+<p>O(N^2)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">canCompleteCircuit</span><span class="params">(<span class="keyword">int</span>[] gas, <span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (gas == <span class="keyword">null</span> || cost == <span class="keyword">null</span> || gas.length == <span class="number">0</span> || cost.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;   </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; gas.length; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">int</span> curr_gas = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">boolean</span> flag = <span class="keyword">true</span>;</span><br><span class="line">            <span class="keyword">while</span> (curr_gas &gt;= <span class="number">0</span> &amp;&amp; count &lt; gas.length) &#123;</span><br><span class="line">                index = (count + i) % gas.length;</span><br><span class="line">                curr_gas += gas[index];</span><br><span class="line">                curr_gas -= cost[index];</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (count == gas.length &amp;&amp; curr_gas &gt;= <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/21/partition-list/">
                 Partition List
               </a>
@@ -706,237 +944,6 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/find-minimum-in-rotated-sorted-array/">
-                Find Minimum in Rotated Sorted Array
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/find-minimum-in-rotated-sorted-array/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/find-minimum-in-rotated-sorted-array/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array" target="_blank" rel="external">Find Minimum in Rotated Sorted Array</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMin</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> end = nums.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> mid = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (start + <span class="number">1</span> &lt; end) &#123;</span><br><span class="line">            mid = start + (end - start) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (nums[mid] &lt; nums[end]) &#123;</span><br><span class="line">                end = mid;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                start = mid;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (nums[start] &lt; nums[end])?nums[start]:nums[end];        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/container-with-most-water/">
-                Container With Most Water
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/container-with-most-water/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/container-with-most-water/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/container-with-most-water" target="_blank" rel="external">Container With Most Water</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (height == <span class="keyword">null</span> || height.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;        </span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = height.length - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            max = Math.max(max, Math.min(height[left], height[right]) * (right - left));</span><br><span class="line">            <span class="keyword">if</span> (height[left] &lt; height[right]) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/best-time-to-buy-and-sell-stock-iii/">
-                Best Time to Buy and Sell Stock III
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/best-time-to-buy-and-sell-stock-iii/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/best-time-to-buy-and-sell-stock-iii/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii" target="_blank" rel="external">Best Time to Buy and Sell Stock III</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//local[i][j]=max(global[i-1][j-1]+max(diff,0),local[i-1][j]+diff)</span></span><br><span class="line">        <span class="comment">//global[i][j]=max(local[i][j],global[i-1][j])</span></span><br><span class="line">        <span class="comment">//ith day, jth trasaction</span></span><br><span class="line">        <span class="keyword">if</span> (prices == <span class="keyword">null</span> || prices.length &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] local = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">        <span class="keyword">int</span>[] global = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> diff = prices[i + <span class="number">1</span>] - prices[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">2</span>; j &gt;= <span class="number">1</span>; j--) &#123;</span><br><span class="line">                local[j] = Math.max(global[j - <span class="number">1</span>] + Math.max(diff, <span class="number">0</span>), local[j] + diff);</span><br><span class="line">                global[j] = Math.max(local[j], global[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> global[<span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
@@ -975,7 +982,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">123</span>
+              <span class="site-state-item-count">126</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

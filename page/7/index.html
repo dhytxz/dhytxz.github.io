@@ -178,6 +178,237 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/20/palindrome-number/">
+                Palindrome Number
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/palindrome-number/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/palindrome-number/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/palindrome-number" target="_blank" rel="external">Palindrome Number</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(x &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x == reverse(x);    </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> rst = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(x != <span class="number">0</span>) &#123;</span><br><span class="line">            rst = rst * <span class="number">10</span> + x % <span class="number">10</span>;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> rst;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/20/number-of-islands/">
+                Number of Islands
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/number-of-islands/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/number-of-islands/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/number-of-islands" target="_blank" rel="external">Number of Islands</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">coordinate</span> </span>&#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> r;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">int</span> c;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">coordinate</span><span class="params">(<span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.r = r;</span><br><span class="line">            <span class="keyword">this</span>.c = c;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIslands</span><span class="params">(<span class="keyword">char</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (grid == <span class="keyword">null</span> || grid.length == <span class="number">0</span> || grid[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> raw = grid.length;</span><br><span class="line">        <span class="keyword">int</span> col = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">boolean</span>[][] visited = <span class="keyword">new</span> <span class="keyword">boolean</span>[raw][col];</span><br><span class="line">        <span class="keyword">int</span>[][] dir = &#123;&#123;-<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">1</span>, <span class="number">0</span>&#125;, &#123;<span class="number">0</span>, -<span class="number">1</span>&#125;, &#123;<span class="number">0</span>, <span class="number">1</span>&#125;&#125;;</span><br><span class="line">                    <span class="comment">// up,      down,   left,    right</span></span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; raw; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; col; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j] == <span class="string">'1'</span> &amp;&amp; !visited[i][j]) &#123;</span><br><span class="line">                    bfs(grid, visited, dir, raw, col, i, j);</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">char</span>[][] grid, <span class="keyword">boolean</span>[][] visited, <span class="keyword">int</span>[][] dir, <span class="keyword">int</span> raw, <span class="keyword">int</span> col, <span class="keyword">int</span> ci, <span class="keyword">int</span> cj)</span> </span>&#123;</span><br><span class="line">        Queue&lt;coordinate&gt; q = <span class="keyword">new</span> LinkedList&lt;coordinate&gt;();</span><br><span class="line">        q.offer(<span class="keyword">new</span> coordinate(ci, cj));</span><br><span class="line">        visited[ci][cj] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span> (!q.isEmpty()) &#123;</span><br><span class="line">            <span class="keyword">int</span> size = q.size();</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size; i++) &#123;</span><br><span class="line">                coordinate curr = q.poll();</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> d = <span class="number">0</span>; d &lt; dir.length; d++) &#123;</span><br><span class="line">                    <span class="keyword">int</span> craw = curr.r + dir[d][<span class="number">0</span>];</span><br><span class="line">                    <span class="keyword">int</span> ccol = curr.c + dir[d][<span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span> (craw &lt; <span class="number">0</span> || craw &gt;= raw ||</span><br><span class="line">                        ccol &lt; <span class="number">0</span> || ccol &gt;= col) &#123;</span><br><span class="line">                        <span class="keyword">continue</span>;        </span><br><span class="line">                    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (grid[craw][ccol] == <span class="string">'1'</span> &amp;&amp; !visited[craw][ccol])&#123;</span><br><span class="line">                        visited[craw][ccol] = <span class="keyword">true</span>;</span><br><span class="line">                        q.offer(<span class="keyword">new</span> coordinate(craw, ccol));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/20/number-of-1-bits/">
+                Number of 1 Bits
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/number-of-1-bits/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/number-of-1-bits/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/number-of-1-bits" target="_blank" rel="external">Number of 1 Bits</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need to treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hammingWeight</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> b = n &gt;&gt; i;</span><br><span class="line">            <span class="keyword">if</span> (a == (a &amp; b)) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/20/minimum-size-subarray-sum/">
                 Minimum Size Subarray Sum
               </a>
@@ -706,237 +937,6 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/maximum-depth-of-binary-tree/">
-                Maximum Depth of Binary Tree
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/maximum-depth-of-binary-tree/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/maximum-depth-of-binary-tree/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree" target="_blank" rel="external">Maximum Depth of Binary Tree</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for a binary tree node.</span><br><span class="line"> * public class TreeNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     TreeNode left;</span><br><span class="line"> *     TreeNode right;</span><br><span class="line"> *     TreeNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDepth</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> depthHelper(root);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">depthHelper</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> left = depthHelper(root.left);</span><br><span class="line">        <span class="keyword">int</span> right = depthHelper(root.right);</span><br><span class="line">        <span class="keyword">return</span> Math.max(left, right) + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/maximal-square/">
-                Maximal Square
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/maximal-square/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/maximal-square/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/maximal-square" target="_blank" rel="external">Maximal Square</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximalSquare</span><span class="params">(<span class="keyword">char</span>[][] matrix)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (matrix == <span class="keyword">null</span> || matrix.length == <span class="number">0</span> || matrix[<span class="number">0</span>].length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> raw = matrix.length;</span><br><span class="line">        <span class="keyword">int</span> col = matrix[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">int</span>[][] ret = <span class="keyword">new</span> <span class="keyword">int</span>[raw][col];</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; raw; i++) &#123;</span><br><span class="line">            ret[i][<span class="number">0</span>] = (matrix[i][<span class="number">0</span>] == <span class="string">'1'</span>)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (ret[i][<span class="number">0</span>] == <span class="number">1</span>) &#123;</span><br><span class="line">                max = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; col; i++) &#123;</span><br><span class="line">            ret[<span class="number">0</span>][i] = (matrix[<span class="number">0</span>][i] == <span class="string">'1'</span>)?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (ret[<span class="number">0</span>][i] == <span class="number">1</span>) &#123;</span><br><span class="line">                max = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; raw; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; col; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (matrix[i][j] == <span class="string">'0'</span>) &#123;</span><br><span class="line">                    ret[i][j] = <span class="number">0</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = Math.min(ret[i - <span class="number">1</span>][j] + <span class="number">1</span>, ret[i][j - <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">                    ret[i][j] = Math.min(temp, ret[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span> (max &lt; ret[i][j]) &#123;</span><br><span class="line">                        max = ret[i][j];</span><br><span class="line">                    &#125;    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max * max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/majority-element/">
-                Majority Element
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/majority-element/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/majority-element/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/majority-element" target="_blank" rel="external">Majority Element</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> num = nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">                count++;</span><br><span class="line">                num = nums[i];</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (num == nums[i]) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                count--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
@@ -975,7 +975,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">123</span>
+              <span class="site-state-item-count">126</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

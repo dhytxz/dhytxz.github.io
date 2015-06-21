@@ -178,6 +178,237 @@
           
           
             
+              <a class="post-title-link" href="/2015/06/20/reverse-linked-list/">
+                Reverse Linked List
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/reverse-linked-list/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/reverse-linked-list/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/reverse-linked-list" target="_blank" rel="external">Reverse Linked List</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Definition for singly-linked list.</span><br><span class="line"> * public class ListNode &#123;</span><br><span class="line"> *     int val;</span><br><span class="line"> *     ListNode next;</span><br><span class="line"> *     ListNode(int x) &#123; val = x; &#125;</span><br><span class="line"> * &#125;</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        dummy.next = head;</span><br><span class="line">        <span class="comment">//dummy-&gt;1-&gt;2-&gt;null</span></span><br><span class="line">        <span class="keyword">while</span> (head.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            ListNode temp = dummy.next;</span><br><span class="line">            dummy.next = head.next;</span><br><span class="line">            head.next = head.next.next;</span><br><span class="line">            dummy.next.next = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/20/reverse-integer/">
+                Reverse Integer
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/reverse-integer/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/reverse-integer/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/reverse-integer" target="_blank" rel="external">Reverse Integer</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> last = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">boolean</span> isNeg = (x &lt; <span class="number">0</span>)?<span class="keyword">true</span>:<span class="keyword">false</span>;</span><br><span class="line">        x = Math.abs(x);</span><br><span class="line">        <span class="keyword">while</span> (x &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (ret &gt; Integer.MAX_VALUE / <span class="number">10</span>) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            last = x % <span class="number">10</span>;</span><br><span class="line">            ret = ret * <span class="number">10</span> + last;</span><br><span class="line">            x = x / <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (isNeg) &#123;</span><br><span class="line">            <span class="keyword">return</span> ret * (-<span class="number">1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              <a class="post-title-link" href="/2015/06/20/reverse-bits/">
+                Reverse Bits
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2015-06-20
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/LeetCode/">LeetCode</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/06/20/reverse-bits/#comments" >
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/reverse-bits/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/reverse-bits" target="_blank" rel="external">Reverse Bits</a></cite></footer></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// you need treat n as an unsigned value</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">reverseBits</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> mask_r = <span class="number">0x00000001</span>;</span><br><span class="line">        <span class="keyword">int</span> mask_l = <span class="number">0x80000000</span>;</span><br><span class="line">        <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">32</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (((mask_r &lt;&lt; i) &amp; n) == (mask_r &lt;&lt; i)) &#123;</span><br><span class="line">                ret = (mask_l &gt;&gt;&gt; i) | ret;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2015/06/20/restore-ip-addresses/">
                 Restore IP Addresses
               </a>
@@ -706,237 +937,6 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/remove-duplicates-from-sorted-array-ii/">
-                Remove Duplicates from Sorted Array II
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/remove-duplicates-from-sorted-array-ii/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/remove-duplicates-from-sorted-array-ii/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii" target="_blank" rel="external">Remove Duplicates from Sorted Array II</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums.length &lt;=<span class="number">2</span> ) &#123;</span><br><span class="line">            <span class="keyword">return</span> nums.length;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> storeindex = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> pointer = <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">while</span> (pointer &lt; nums.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!(nums[storeindex] == nums[storeindex - <span class="number">1</span>] &amp;&amp; nums[storeindex] == nums[pointer])) &#123;</span><br><span class="line">                nums[++storeindex] = nums[pointer];    </span><br><span class="line">            &#125;</span><br><span class="line">            pointer++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> storeindex + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/remove-duplicates-from-sorted-array/">
-                Remove Duplicates from Sorted Array
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/remove-duplicates-from-sorted-array/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/remove-duplicates-from-sorted-array/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array" target="_blank" rel="external">Remove Duplicates from Sorted Array</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">removeDuplicates</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> storeindex = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> pointer = <span class="number">0</span>;</span><br><span class="line">        <span class="comment">//not equal then move;</span></span><br><span class="line">        <span class="keyword">while</span> (pointer &lt; nums.length) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[storeindex] != nums[pointer]) &#123;</span><br><span class="line">                nums[++storeindex] = nums[pointer];</span><br><span class="line">            &#125;</span><br><span class="line">            pointer++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> storeindex + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2015/06/20/rectangle-area/">
-                Rectangle Area
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2015-06-20
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/LeetCode/">LeetCode</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/06/20/rectangle-area/#comments" >
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/06/20/rectangle-area/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <blockquote><footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/rectangle-area" target="_blank" rel="external">Rectangle Area</a></cite></footer></blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">computeArea</span><span class="params">(<span class="keyword">int</span> A, <span class="keyword">int</span> B, <span class="keyword">int</span> C, <span class="keyword">int</span> D, <span class="keyword">int</span> E, <span class="keyword">int</span> F, <span class="keyword">int</span> G, <span class="keyword">int</span> H)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//A C E G</span></span><br><span class="line">        <span class="comment">//B D F H</span></span><br><span class="line">        <span class="keyword">int</span> area0 = (C - A) * (D - B);</span><br><span class="line">        <span class="keyword">int</span> area1 = (G - E) * (H - F);</span><br><span class="line">        <span class="keyword">if</span> (E &gt;= C || G &lt;= A) &#123;</span><br><span class="line">            <span class="keyword">return</span> area0 + area1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (F &gt;= D || H &lt;= B) &#123;</span><br><span class="line">            <span class="keyword">return</span> area0 + area1;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (A &lt;= E &amp;&amp; C &gt;= E &amp;&amp; G &gt;= C) &#123;</span><br><span class="line">            x = C - E;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (A &gt;= E &amp;&amp; C &lt;= G) &#123;</span><br><span class="line">            x = C - A;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (A &lt;= E &amp;&amp; C &gt;= G) &#123;</span><br><span class="line">            x = G - E;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (A &lt;= G &amp;&amp; C &gt;= G &amp;&amp; E &lt;= A) &#123;</span><br><span class="line">            x = G - A;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (F &lt;= B &amp;&amp; H &gt;= B &amp;&amp; D &gt;= H) &#123;</span><br><span class="line">            y = H - B;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (F &gt;= B &amp;&amp; H &lt;= D) &#123;</span><br><span class="line">            y = H - F;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (F &lt;= B &amp;&amp; H &gt;= D) &#123;</span><br><span class="line">            y = D - B;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (F &lt;= D &amp;&amp; H &gt;= D &amp;&amp; B &lt;= F) &#123;</span><br><span class="line">            y = D - F;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> area0 + area1 - x * y;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
@@ -975,7 +975,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">123</span>
+              <span class="site-state-item-count">126</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
